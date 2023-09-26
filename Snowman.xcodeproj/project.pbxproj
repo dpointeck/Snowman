@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332AE4EE2AC351BB002262E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AE4ED2AC351BB002262E7 /* Game.swift */; };
+		332AE4F02AC35241002262E7 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AE4EF2AC35241002262E7 /* GameStatus.swift */; };
+		332AE4F52AC354BD002262E7 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AE4F42AC354BD002262E7 /* Letter.swift */; };
 		332D97792ABF6FC4007BF09F /* SnowmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D97782ABF6FC4007BF09F /* SnowmanApp.swift */; };
 		332D977B2ABF6FC4007BF09F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D977A2ABF6FC4007BF09F /* ContentView.swift */; };
 		332D977D2ABF6FC5007BF09F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332D977C2ABF6FC5007BF09F /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		332AE4ED2AC351BB002262E7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		332AE4EF2AC35241002262E7 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		332AE4F42AC354BD002262E7 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		332D97752ABF6FC4007BF09F /* Snowman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332D97782ABF6FC4007BF09F /* SnowmanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowmanApp.swift; sourceTree = "<group>"; };
 		332D977A2ABF6FC4007BF09F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		332AE4F22AC35318002262E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				332AE4EF2AC35241002262E7 /* GameStatus.swift */,
+				332AE4F42AC354BD002262E7 /* Letter.swift */,
+				332AE4ED2AC351BB002262E7 /* Game.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		332D976C2ABF6FC4007BF09F = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +77,7 @@
 		332D97772ABF6FC4007BF09F /* Snowman */ = {
 			isa = PBXGroup;
 			children = (
+				332AE4F22AC35318002262E7 /* Models */,
 				33FAA6EB2AC2014900561F46 /* Views */,
 				332D97782ABF6FC4007BF09F /* SnowmanApp.swift */,
 				332D977C2ABF6FC5007BF09F /* Assets.xcassets */,
@@ -160,7 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				33FAA72E2AC20B1000561F46 /* GuessesView.swift in Sources */,
+				332AE4F02AC35241002262E7 /* GameStatus.swift in Sources */,
 				332D977B2ABF6FC4007BF09F /* ContentView.swift in Sources */,
+				332AE4F52AC354BD002262E7 /* Letter.swift in Sources */,
+				332AE4EE2AC351BB002262E7 /* Game.swift in Sources */,
 				33FAA72C2AC20A5100561F46 /* LettersView.swift in Sources */,
 				33FAA6EF2AC2017400561F46 /* SidebarView.swift in Sources */,
 				33FAA6ED2AC2016500561F46 /* GameView.swift in Sources */,
