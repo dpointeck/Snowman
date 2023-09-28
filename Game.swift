@@ -11,7 +11,7 @@ struct Game {
     var incorrectGuessCount = 0
     var statusText = "Enter a letter to start the game"
     var word = "SNOWMAN"
-    var guesses: [String] = ["S", "M"]
+    var guesses: [String] = []
     var gameStatus = GameStatus.inProgress
     var letters: [Letter] {
         var lettersArray: [Letter] = []

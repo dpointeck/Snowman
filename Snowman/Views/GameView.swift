@@ -22,14 +22,15 @@ struct GameView: View {
                 Text("\(game.statusText)")
                     .font(.title2)
                 LettersView(letters: game.letters)
-                
                 Spacer()
                 Button("New Game") {
                     print("Start new game.")
                 }
                 .keyboardShortcut(/*@START_MENU_TOKEN@*/.defaultAction/*@END_MENU_TOKEN@*/)
+                .opacity(game.gameStatus == .inProgress ? 0 : 1)
+                .disabled(game.gameStatus == .inProgress)
                 Spacer()
-                GuessesView()
+                GuessesView(game: $game)
 
             }
             .padding()

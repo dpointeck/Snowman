@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct GuessesView: View {
-    let guesses = ["E", "S", "R", "X"]
+    @State var nextGuess = ""
+    @Binding var game: Game
+
+    let guesses = ["M"]
     var body: some View {
         HStack {
             Text("Letters used:")
-            Text(guesses.joined(separator: ", "))
+            Text(game.guesses.joined(separator: ", "))
         }
         LabeledContent("Guess a letter:") {
-            Text("Q")
+            TextField("", text: $nextGuess)
+                .frame(width: 50)
+                .textFieldStyle(.roundedBorder)
+                .disabled(game.gameStatus != .inProgress)
         }
     }
 }
 
 #Preview {
-    GuessesView()
+    GuessesView(game: .constant(Game()))
 }
