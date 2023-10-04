@@ -24,7 +24,7 @@ struct GameView: View {
                 LettersView(letters: game.letters)
                 Spacer()
                 Button("New Game") {
-                    print("Start new game.")
+                    game = Game()
                 }
                 .keyboardShortcut(/*@START_MENU_TOKEN@*/.defaultAction/*@END_MENU_TOKEN@*/)
                 .opacity(game.gameStatus == .inProgress ? 0 : 1)

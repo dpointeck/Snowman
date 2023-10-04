@@ -10,6 +10,7 @@ import SwiftUI
 struct GuessesView: View {
     @State var nextGuess = ""
     @Binding var game: Game
+    @FocusState var entryFieldHasFocus: Bool
 
     let guesses = ["M"]
     var body: some View {
@@ -22,6 +23,13 @@ struct GuessesView: View {
                 .frame(width: 50)
                 .textFieldStyle(.roundedBorder)
                 .disabled(game.gameStatus != .inProgress)
+                .onChange(of: nextGuess) { newValue in
+                    game.processGuess(letter: newValue)
+                    nextGuess = ""
+                }.focused($entryFieldHasFocus)
+                .onChange(of: game.gameStatus) { _ in
+                    entryFieldHasFocus = true
+                }
         }
     }
 }
