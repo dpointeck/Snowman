@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @EnvironmentObject var appState: AppState
+
     var body: some View {
-        Text("Sidebar")
+        List(appState.games) { game in
+            VStack(alignment: .leading) {
+                Text("Game \(game.id)")
+                    .font(.title3)
+                Text(game.sidebarWord)
+            }
+            .padding(.vertical)
+        }
     }
 }
 
 #Preview {
     SidebarView()
+        .environmentObject(AppState())
 }

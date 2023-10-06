@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct GameView: View {
-    @State var game = Game()
+    @EnvironmentObject var appState: AppState
+    var game: Game {
+        appState.games[appState.gameIndex]
+    }
 
     var body: some View {
         HStack {
@@ -24,13 +27,13 @@ struct GameView: View {
                 LettersView(letters: game.letters)
                 Spacer()
                 Button("New Game") {
-                    game = Game()
+                    appState.startNewGame()
                 }
                 .keyboardShortcut(/*@START_MENU_TOKEN@*/.defaultAction/*@END_MENU_TOKEN@*/)
                 .opacity(game.gameStatus == .inProgress ? 0 : 1)
                 .disabled(game.gameStatus == .inProgress)
                 Spacer()
-                GuessesView(game: $game)
+                GuessesView(game: $appState.games[appState.gameIndex])
 
             }
             .padding()
@@ -41,4 +44,5 @@ struct GameView: View {
 
 #Preview {
     GameView()
+        .environmentObject(AppState())
 }
