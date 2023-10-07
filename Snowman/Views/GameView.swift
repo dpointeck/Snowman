@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @EnvironmentObject var appState: AppState
+    @ObservedObject var appState: AppState
     var game: Game {
         appState.games[appState.gameIndex]
     }
@@ -24,6 +24,7 @@ struct GameView: View {
                 Spacer()
                 Text("\(game.statusText)")
                     .font(.title2)
+                    .foregroundColor(game.gameStatus.statusTextColor)
                 LettersView(letters: game.letters)
                 Spacer()
                 Button("New Game") {
@@ -43,6 +44,5 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView()
-        .environmentObject(AppState())
+    GameView(appState: AppState())
 }

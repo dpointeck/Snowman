@@ -27,7 +27,10 @@ struct GuessesView: View {
                     game.processGuess(letter: newValue)
                     nextGuess = ""
                 }.focused($entryFieldHasFocus)
-                .onChange(of: game.gameStatus) { _ in
+                .onChange(of: game.id) { _ in
+                    entryFieldHasFocus = true
+                }
+                .onAppear {
                     entryFieldHasFocus = true
                 }
         }
